@@ -1,0 +1,31 @@
+name: AINOL scheduled scan
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: read
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scan issue changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python scripts/ainol_scan_github.py --repo "$GITHUB_REPOSITORY" --state .ainol-state.json --out ainol-scan-report.json
+      - name: Upload report artifact
+        if: hashFiles('ainol-scan-report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ainol-scan-report
+          path: ainol-scan-report.json

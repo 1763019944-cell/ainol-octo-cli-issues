@@ -1,0 +1,32 @@
+name: Bug 反馈
+labels: [type/bug, status/triage, area/unknown]
+description: 报告 octo-cli 的用户可感知异常
+body:
+  - type: textarea
+    id: phenomenon
+    attributes:
+      label: 现象
+      description: 用户实际看到了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望
+      description: 用户本来希望看到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 尽量用命令、输入、输出描述；请脱敏。
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级建议
+      options: [P0, P1, P2, P3]
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据/日志（脱敏）

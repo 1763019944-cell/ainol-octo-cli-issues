@@ -1,0 +1,26 @@
+name: Feature 需求
+labels: [type/feature, status/triage, area/unknown]
+description: 提出 octo-cli 新能力或体验优化
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景/用户
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 用户希望完成什么？
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 写用户能感知到的结果，不写实现方案。
+  - type: textarea
+    id: non-goals
+    attributes:
+      label: 非目标

@@ -1,0 +1,30 @@
+name: PRD 补全
+labels: [type/prd, status/prd-ready]
+description: What-only PRD 模板
+body:
+  - type: textarea
+    id: users
+    attributes:
+      label: 目标用户/场景
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题陈述
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围 / 非范围
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 用户可感知验收标准
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: 风险与待确认问题
