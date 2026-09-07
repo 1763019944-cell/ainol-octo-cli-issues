@@ -7,13 +7,11 @@
 - `.github/ISSUE_TEMPLATE/bug_report.yml`：Bug 收单模板
 - `.github/ISSUE_TEMPLATE/feature_request.yml`：Feature 收单模板
 - `.github/ISSUE_TEMPLATE/prd.yml`：PRD 补全模板
-- `docs/deferred/ainol-scan.workflow.yml`：定时扫描 workflow 模板（当前 token 缺 `workflow` scope，暂未放入 `.github/workflows/`）
+- `.github/workflows/ainol-scan.yml`：定时扫描记录 workflow
 - `labels.yml`：建议 label 体系
 - `prd-template.md`：What-only PRD 模板
 
 ## 定时扫描原则
-
-> 注意：GitHub Actions workflow 文件已准备在 `docs/deferred/ainol-scan.workflow.yml`。当前发布 token 缺少 `workflow` scope，GitHub 拒绝由该 token 创建 `.github/workflows/*.yml`，所以 cron workflow 暂未启用。
 
 
 - cron 自己醒，不依赖人工触发。
