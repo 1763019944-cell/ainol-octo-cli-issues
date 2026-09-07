@@ -17,6 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Restore scan state
+        uses: actions/cache@v4
+        with:
+          path: .ainol-state.json
+          key: ainol-state-${{ github.run_id }}
+          restore-keys: |
+            ainol-state-
       - name: Scan issue changes
         env:
           GH_TOKEN: ${{ github.token }}
